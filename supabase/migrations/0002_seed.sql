@@ -155,7 +155,7 @@ $$::jsonb),
 $$::jsonb),
 ('contact', $$
 {
-  "email": "contact@enactusiseahz.tn",
+  "email": "contact@enactusiseahz.com",
   "location": "Higher Institute of Applied Studies in Humanities of Zaghouan, Zaghouan, Tunisia"
 }
 $$::jsonb),

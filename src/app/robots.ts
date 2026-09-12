@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { safeUrl } from "@/lib/utils";
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = safeUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://enactusiseahz.tn").origin;
+  const siteUrl = safeUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://enactusiseahz.com").origin;
 
   return {
     rules: [

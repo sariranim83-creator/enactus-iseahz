@@ -5,7 +5,7 @@ import { safeUrl } from "@/lib/utils";
 const staticPaths = ["", "/events", "/gallery", "/privacy", "/terms"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = safeUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://enactusiseahz.tn").origin;
+  const siteUrl = safeUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://enactusiseahz.com").origin;
 
   return locales.flatMap((locale) =>
     staticPaths.map((path) => ({

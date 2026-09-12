@@ -36,7 +36,7 @@ export async function generateMetadata({
   if (!isLocale(params.locale)) return {};
   const locale = params.locale;
   const content = await getSiteContent();
-  const siteUrl = safeUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://enactusiseahz.tn");
+  const siteUrl = safeUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://enactusiseahz.com");
   const title = t(content.seo.pageTitle, locale);
   const description = t(content.seo.metaDescription, locale);
 
@@ -106,7 +106,7 @@ export default async function LocaleLayout({
     "@type": "Organization",
     name: content.general.clubName,
     alternateName: "Enactus ISEAH Zaghouan",
-    url: safeUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://enactusiseahz.tn").origin,
+    url: safeUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://enactusiseahz.com").origin,
     logo: content.general.logoUrl ?? undefined,
     description: t(content.general.siteDescription, locale),
     address: {

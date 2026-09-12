@@ -293,7 +293,7 @@ export const defaultContent: SiteContent = {
     linkedin: null,
   },
   contact: {
-    email: "contact@enactusiseahz.tn",
+    email: "contact@enactusiseahz.com",
     location: "Higher Institute of Applied Studies in Humanities of Zaghouan, Zaghouan, Tunisia",
   },
   partners: [],

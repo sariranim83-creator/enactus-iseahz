@@ -109,8 +109,8 @@ Fill in `.env.local`:
 NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 SUPABASE_SERVICE_ROLE_KEY=...
-NEXT_PUBLIC_SITE_URL=https://enactusiseahz.tn
-ADMIN_BOOTSTRAP_EMAIL=admin@enactusiseahz.tn
+NEXT_PUBLIC_SITE_URL=https://enactusiseahz.com
+ADMIN_BOOTSTRAP_EMAIL=admin@enactusiseahz.com
 ADMIN_BOOTSTRAP_PASSWORD=choose-a-strong-password
 ```
 
@@ -156,10 +156,10 @@ Visit `http://localhost:3000` (redirects to `/en`). Admin dashboard:
    role key — it's only ever read server-side).
 4. Deploy.
 
-### Connecting `enactusiseahz.tn`
+### Connecting `enactusiseahz.com`
 
-1. In the Vercel project → **Settings → Domains**, add `enactusiseahz.tn`
-   (and `www.enactusiseahz.tn` if desired).
+1. In the Vercel project → **Settings → Domains**, add `enactusiseahz.com`
+   (and `www.enactusiseahz.com` if desired).
 2. Vercel shows the DNS records to add (usually an `A` record to Vercel's IP
    and/or a `CNAME` for `www`). Add those records with your domain registrar.
 3. HTTPS is issued automatically by Vercel once DNS propagates — no extra
