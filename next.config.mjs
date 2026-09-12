@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
-const supabaseHost = process.env.NEXT_PUBLIC_SUPABASE_URL
-  ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).hostname
-  : undefined;
+function getSupabaseHost() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!url) return undefined;
+  try {
+    return new URL(url).hostname;
+  } catch {
+    // Malformed/placeholder env value — never let this crash the build.
+    return undefined;
+  }
+}
+
+const supabaseHost = getSupabaseHost();
 
 const nextConfig = {
   reactStrictMode: true,

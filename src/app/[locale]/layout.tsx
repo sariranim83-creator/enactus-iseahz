@@ -7,7 +7,7 @@ import { locales, isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getSiteContent } from "@/lib/content/getContent";
 import { getLocalLogoUrl } from "@/lib/content/resolveLogo";
-import { t } from "@/lib/utils";
+import { t, safeUrl } from "@/lib/utils";
 import { Navbar } from "@/components/nav/Navbar";
 import { Footer } from "@/components/footer/Footer";
 import type { Locale } from "@/types/content";
@@ -36,12 +36,12 @@ export async function generateMetadata({
   if (!isLocale(params.locale)) return {};
   const locale = params.locale;
   const content = await getSiteContent();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://enactusiseahz.tn";
+  const siteUrl = safeUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://enactusiseahz.tn");
   const title = t(content.seo.pageTitle, locale);
   const description = t(content.seo.metaDescription, locale);
 
   return {
-    metadataBase: new URL(siteUrl),
+    metadataBase: siteUrl,
     title: {
       default: title,
       template: `%s | ${content.general.clubName}`,
@@ -64,7 +64,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `${siteUrl}/${locale}`,
+      url: `${siteUrl.origin}/${locale}`,
       siteName: content.general.clubName,
       locale: locale === "fr" ? "fr_TN" : "en_US",
       type: "website",
@@ -106,7 +106,7 @@ export default async function LocaleLayout({
     "@type": "Organization",
     name: content.general.clubName,
     alternateName: "Enactus ISEAH Zaghouan",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://enactusiseahz.tn",
+    url: safeUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://enactusiseahz.tn").origin,
     logo: content.general.logoUrl ?? undefined,
     description: t(content.general.siteDescription, locale),
     address: {
